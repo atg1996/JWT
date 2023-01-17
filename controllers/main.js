@@ -14,7 +14,7 @@ try {
     
     //dummy Id 
     const id = new Date().getDate();
-    const token = jwt.sign({ id, username }, String(process.env.JWT_SECRET), {
+    const token = jwt.sign({ id, username }, process.env.JWT_SECRET, {
         expiresIn: '30d',
       })
     
