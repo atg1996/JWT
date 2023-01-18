@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const jwt = require("jsonwebtoken");
 
-const CustomAPIError = require("../errors/custom-error")
+const {BadRequestError} = require("../errors/index")
 
 const login = async (req,res) => {
 try {
@@ -10,7 +10,7 @@ try {
 
     if(!username || !password) {
         
-    throw new CustomAPIError("please provide login and password ", 400)
+    throw new BadRequestError("please provide login and password ")
     }
     
     //dummy Id 
